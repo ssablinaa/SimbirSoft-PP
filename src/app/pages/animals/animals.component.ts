@@ -13,6 +13,7 @@ export class AnimalsComponent {
     .getAnimals()
     .pipe(finalize(() => this.loading$.next(false)));
   loading$ = new BehaviorSubject<boolean>(true);
+  breakingBadQuote$ = this.animalsService.getBreakingBadQuote();
 
   constructor(private animalsService: AnimalsService) {}
   headerItems = [

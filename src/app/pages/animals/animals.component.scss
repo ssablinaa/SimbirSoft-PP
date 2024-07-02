@@ -144,3 +144,20 @@
     }
   }
 }
+.quote {
+  background-color: $dog-bg-color;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+  height: 160px;
+
+  &__text {
+    font-size: 18px;
+    font-weight: 700;
+    color: $text-color;
+  }
+
+  &__author {
+    color: $text-color;
+  }
+}
