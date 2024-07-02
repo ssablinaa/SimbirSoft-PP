@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { AnimalsService } from '../../services/animals.service';
 import { BehaviorSubject, finalize } from 'rxjs';
 
@@ -9,7 +9,9 @@ import { BehaviorSubject, finalize } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AnimalsComponent {
-  a$ = this.animalsService.getAnimals();
+  a$ = this.animalsService
+    .getAnimals()
+    .pipe(finalize(() => this.loading$.next(false)));
   loading$ = new BehaviorSubject<boolean>(true);
 
   constructor(private animalsService: AnimalsService) {}

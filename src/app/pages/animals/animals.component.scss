@@ -13,6 +13,7 @@
     @include center-flex;
     gap: 10px;
   }
+
   &__icon {
     color: $white-color;
     cursor: pointer;
@@ -91,9 +92,7 @@
 
   &__img {
     flex: 1 1 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include center-flex;
   }
   &__img-dog {
     width: 100%;
@@ -105,10 +104,8 @@
 
   &__text {
     flex: 1 1 100%;
-    display: flex;
+    @include center-flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background-color: $dog-color;
     padding: 20px;
     border-radius: 10px;
@@ -140,15 +137,10 @@
   }
 
   @media (min-width: 900px) {
-    &__img {
-      flex: 1;
-      max-width: 50%;
-    }
-
+    &__img,
     &__text {
       flex: 1;
       max-width: 50%;
-      text-align: left;
     }
   }
 }

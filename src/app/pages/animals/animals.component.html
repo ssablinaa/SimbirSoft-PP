@@ -51,21 +51,22 @@
 
 <div class="container">
   <div class="container__img">
-    <div *ngIf="a$ | async as dogImageUrl">
-      <div class="img-wrapper">
-        <mat-progress-spinner
-          *ngIf="loading$ | async"
-          class="loader"
-          [diameter]="50"
-          mode="indeterminate"
-        ></mat-progress-spinner>
-      </div>
+    <div *ngIf="a$ | async as dogImageUrl; else loading">
       <img
         class="container__img-dog"
         [src]="dogImageUrl.message"
         alt="Dog Image"
       />
     </div>
+    <ng-template #loading>
+      <div class="container__img-wrapper">
+        <mat-progress-spinner
+          class="container__loader"
+          [diameter]="50"
+          mode="indeterminate"
+        ></mat-progress-spinner>
+      </div>
+    </ng-template>
   </div>
   <div class="container__text">
     <p class="container__text-descrip">
