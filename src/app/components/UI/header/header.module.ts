@@ -11,21 +11,11 @@ import { HeaderComponent } from './header.component';
 import { HomeComponent } from '../../../pages/home/home.component';
 import { AnimalsComponent } from '../../../pages/animals/animals.component';
 
-export const routes: Routes = [
-  { path: 'animals', component: AnimalsComponent },
-  { path: 'art', component: HomeComponent },
-  { path: 'music', component: HomeComponent },
-  { path: 'dance', component: HomeComponent },
-  { path: 'sport', component: HomeComponent },
-  { path: 'games', component: HomeComponent },
-  { path: 'films', component: HomeComponent },
-  { path: 'comics', component: HomeComponent },
-];
 @NgModule({
   declarations: [HeaderComponent],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes),
+    // RouterModule.forChild(routes),
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,

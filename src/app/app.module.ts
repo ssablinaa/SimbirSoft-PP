@@ -7,6 +7,8 @@ import { routes } from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModalModule } from './auth-modal/auth-modal.module';
 import { AnimalsModule } from './pages/animals/animals.module';
+import { HeaderModule } from './components/UI/header/header.module';
+import { FooterModule } from './components/UI/footer/footer.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +20,8 @@ import { AnimalsModule } from './pages/animals/animals.module';
     HomeModule,
     AuthModalModule,
     AnimalsModule,
+    HeaderModule,
+    FooterModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
