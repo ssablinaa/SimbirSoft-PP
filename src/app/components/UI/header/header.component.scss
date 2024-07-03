@@ -32,6 +32,11 @@
     @media (max-width: 900px) {
       display: none;
     }
+
+    &.active-link {
+      color: $primary-color;
+      font-weight: bold;
+    }
   }
 
   &__right-container {

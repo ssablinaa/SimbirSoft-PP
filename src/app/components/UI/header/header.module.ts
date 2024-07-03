@@ -6,22 +6,21 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterLinkActive, RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from './header.component';
-import { HomeComponent } from '../../../pages/home/home.component';
-import { AnimalsComponent } from '../../../pages/animals/animals.component';
 
 @NgModule({
   declarations: [HeaderComponent],
   imports: [
     CommonModule,
-    // RouterModule.forChild(routes),
+    RouterModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
     MatSidenavModule,
+    RouterLinkActive,
   ],
   exports: [HeaderComponent],
 })
