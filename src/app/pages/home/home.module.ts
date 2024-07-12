@@ -10,10 +10,12 @@ import {
   MatPaginatorIntl,
   MatPaginatorModule,
 } from '@angular/material/paginator';
+import { RouterOutlet } from '@angular/router';
 
 @NgModule({
   declarations: [HomeComponent],
   imports: [
+    RouterOutlet,
     BrowserModule,
     FooterModule,
     CommonModule,

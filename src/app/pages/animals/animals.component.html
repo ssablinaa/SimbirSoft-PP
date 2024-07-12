@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="container__img">
+    <div *ngIf="image$ | async as dogImageUrl; else loading">
+      <img
+        class="container__img-dog"
+        [src]="dogImageUrl.message"
+        alt="Dog Image"
+      />
+    </div>
+    <ng-template #loading>
+      <div class="container__img-wrapper">
+        <mat-progress-spinner
+          class="container__loader"
+          [diameter]="50"
+          mode="indeterminate"
+        ></mat-progress-spinner>
+      </div>
+    </ng-template>
+  </div>
+  <div class="container__text">
+    <p class="container__text-descrip">
+      В мире насчитывается около 400 миллионов домашних животных, подсчитали
+      специалисты компании Mars Petcare. Больше всего кошек и собак содержатся в
+      семьях в США, Китае и России, отмечают в организации по страхованию
+      питомцев Petsecure. В современном мире деятельность, связанная с домашними
+      животными, входит в число более доходных проектов. Каждый год у людей
+      появляется необходимость в отпуске, и в это же время появляется проблема
+      комфортного пребывания питомцев в отсутствие хозяев. В связи с этим
+      возникает потребность в зоогостиницах. Получается, что данный вид бизнеса
+      необходимо развивать, так как он является прибыльным, малоконкурентным, а
+      также необходимым в современном мире.
+    </p>
+    <button mat-button class="container__button">Хочу узнать больше!</button>
+  </div>
+</div>
+<div *ngIf="breakingBadQuote$ | async as quote" class="quote">
+  <p class="quote__text">{{ quote[0].quote }}</p>
+  <p class="quote__author">{{ quote[0].author }}</p>
+</div>

@@ -24,7 +24,8 @@ export class HeaderComponent {
   }
 
   menuItems = [
-    { label: 'Главная', link: '' },
+    { label: 'Главная', link: 'home' },
+    { label: 'Животные', link: '/animals' },
     { label: 'Музыка', link: '/music' },
     { label: 'Искусство', link: '/art' },
     { label: 'Танец', link: '/dance' },

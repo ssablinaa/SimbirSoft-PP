@@ -32,6 +32,11 @@
     @media (max-width: 900px) {
       display: none;
     }
+
+    &.active-link {
+      color: $primary-color;
+      font-weight: bold;
+    }
   }
 
   &__right-container {
@@ -70,6 +75,11 @@
   &__item {
     color: $black-color;
     margin-top: 20px;
+
+    &.active-link {
+      color: $primary-color;
+      font-weight: bold;
+    }
   }
 
   @media (min-width: 900px) {

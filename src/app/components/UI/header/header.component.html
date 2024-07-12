@@ -15,6 +15,7 @@
       *ngFor="let item of menuItems"
       mat-button
       [routerLink]="item.link"
+      routerLinkActive="active-link"
       class="toolbar__top-menu-item"
       >{{ item.label }}</a
     >
@@ -54,6 +55,7 @@
         (click)="sidenav.close()"
         mat-button
         [routerLink]="item.link"
+        routerLinkActive="active-link"
         class="sidenav__item"
       >
         {{ item.label }}

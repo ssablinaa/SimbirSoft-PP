@@ -1,0 +1,83 @@
+@import '../../../assets/colors/colors.scss';
+@import '../../../assets/mixins/_mixins.scss';
+
+.container {
+  background-color: $dog-bg-color;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 50px;
+  padding: 20px;
+
+  &__img {
+    flex: 1 1 100%;
+    @include center-flex;
+  }
+  &__img-dog {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+    @include box-shadow(0, 4px, 8px, #ff8d12, 0.3);
+  }
+
+  &__text {
+    flex: 1 1 100%;
+    @include center-flex;
+    flex-direction: column;
+    background-color: $dog-color;
+    padding: 20px;
+    border-radius: 10px;
+    @include box-shadow(0, 4px, 8px, #ff8d12, 0.3);
+    gap: 30px;
+    text-align: center;
+  }
+
+  &__text-descrip {
+    color: $text-color;
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0;
+    font-weight: 700;
+    word-wrap: break-word;
+  }
+
+  &__button {
+    background: $button-color;
+    width: 300px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 20px;
+    border: none;
+    @include box-shadow(0, 10px, 8px, #a65b0a, 0.748);
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  @media (min-width: 900px) {
+    &__img,
+    &__text {
+      flex: 1;
+      max-width: 50%;
+    }
+  }
+}
+.quote {
+  background-color: $dog-bg-color;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+  height: 160px;
+
+  &__text {
+    font-size: 18px;
+    font-weight: 700;
+    color: $text-color;
+  }
+
+  &__author {
+    color: $text-color;
+  }
+}
