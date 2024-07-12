@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { AnimalsService } from '../../services/animals.service';
-import { BehaviorSubject, finalize } from 'rxjs';
+import { BehaviorSubject, finalize, take } from 'rxjs';
 
 @Component({
   selector: 'app-animals',
@@ -9,16 +9,12 @@ import { BehaviorSubject, finalize } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AnimalsComponent {
-  a$ = this.animalsService
-    .getAnimals()
-    .pipe(finalize(() => this.loading$.next(false)));
+  image$ = this.animalsService.getAnimals().pipe(
+    take(1),
+    finalize(() => this.loading$.next(false)),
+  );
   loading$ = new BehaviorSubject<boolean>(true);
-  breakingBadQuote$ = this.animalsService.getBreakingBadQuote();
+  breakingBadQuote$ = this.animalsService.getBreakingBadQuote().pipe(take(1));
 
   constructor(private animalsService: AnimalsService) {}
-  headerItems = [
-    { label: 'О нас', link: '/animals' },
-    { label: 'Галерея', link: '/animals' },
-    { label: 'Контакты', link: '/animals' },
-  ];
 }

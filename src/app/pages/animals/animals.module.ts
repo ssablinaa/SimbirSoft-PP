@@ -20,6 +20,5 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatSidenavModule,
     MatProgressSpinnerModule,
   ],
-  exports: [AnimalsComponent],
 })
 export class AnimalsModule {}

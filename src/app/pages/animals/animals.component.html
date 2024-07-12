@@ -1,57 +1,6 @@
-<mat-toolbar class="toolbar">
-  <div class="toolbar__left-container">
-    <button
-      mat-icon-button
-      class="toolbar__menu-icon"
-      (click)="sidenav.toggle()"
-      id="menuIcon"
-    >
-      <mat-icon>pets</mat-icon>
-    </button>
-    <mat-icon class="toolbar__icon" routerLink="">pets</mat-icon>
-    <span id="menuTitle" class="toolbar__menu-title">Гостиница для собак</span>
-  </div>
-  <div class="toolbar__center-container">
-    <nav class="toolbar__nav">
-      <a
-        mat-button
-        *ngFor="let item of headerItems"
-        [routerLink]="item.link"
-        class="toolbar__link"
-      >
-        {{ item.label }}
-      </a>
-    </nav>
-  </div>
-</mat-toolbar>
-<mat-sidenav-container>
-  <mat-sidenav #sidenav [fixedInViewport]="true" mode="side" class="sidenav">
-    <button
-      mat-icon-button
-      (click)="sidenav.close()"
-      class="sidenav__close-button"
-    >
-      <mat-icon>close</mat-icon>
-    </button>
-    <button mat-icon-button class="sidenav__home-button">
-      <mat-icon routerLink="">home</mat-icon>
-    </button>
-    <nav class="sidenav__nav">
-      <a
-        mat-button
-        *ngFor="let item of headerItems"
-        [routerLink]="item.link"
-        class="sidenav__link"
-      >
-        {{ item.label }}
-      </a>
-    </nav>
-  </mat-sidenav>
-</mat-sidenav-container>
-
 <div class="container">
   <div class="container__img">
-    <div *ngIf="a$ | async as dogImageUrl; else loading">
+    <div *ngIf="image$ | async as dogImageUrl; else loading">
       <img
         class="container__img-dog"
         [src]="dogImageUrl.message"

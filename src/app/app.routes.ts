@@ -3,6 +3,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AnimalsComponent } from './pages/animals/animals.component';
 
 export const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'animals', component: AnimalsComponent },
   { path: 'art', component: HomeComponent },
